@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import "./CitySelector.css";
 
 const CitySelector = () => {
@@ -14,11 +13,12 @@ const CitySelector = () => {
     useEffect(() => {
         const getCountries = async () => {
           try {
-            const res = await axios.get(
+            const res = await fetch(
               "https://crio-location-selector.onrender.com/countries"
             ); 
-            console.log(res.data);
-            setCountries(res.data); // Store the full data for reset 
+            const data = await res.json();
+            console.log(data);
+            setCountries(data); // Store the full data for reset 
           } catch (error) {
             console.error("Error fetching data:", error); // Log error to console
           }
@@ -29,11 +29,11 @@ const CitySelector = () => {
       useEffect(() => {
         const getStates = async () => {
           try {
-            const res = await axios.get(
+            const res = await fetch(
               `https://crio-location-selector.onrender.com/country=${selectedCountry}/states`
             );
-            console.log(res.data);
-            setStates(res.data) // Store the full data for reset 
+            console.log(data);
+            setStates(data) // Store the full data for reset 
           } catch (error) {
             console.error("Error fetching data:", error); // Log error to console
           }
@@ -44,11 +44,11 @@ const CitySelector = () => {
       useEffect(() => {
         const getCities = async () => {
           try {
-            const res = await axios.get(
+            const res = await fetch(
               ` https://crio-location-selector.onrender.com/country=${selectedCountry}/state=${selectedState}/cities`
             );
-            console.log(res.data);
-            setCities(res.data) // Store the full data for reset 
+            console.log(data);
+            setCities(data) // Store the full data for reset 
           } catch (error) {
             console.error("Error fetching data:", error); // Log error to console
           }
