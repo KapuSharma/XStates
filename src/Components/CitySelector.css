@@ -1,0 +1,56 @@
+/* Container Styling */
+.select-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Title Styling */
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.states{
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Dropdown Styling */
+select {
+    width: 250px; /* Adjust width as needed */
+    height: 40px;
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+}
+
+/* Disabled Dropdown */
+select:disabled {
+    background-color: #f0f0f0;
+    color: #aaa;
+}
+
+/* Dropdown Options */
+select option {
+    font-size: 16px;
+    padding: 5px;
+}
+
+/* Hover & Focus Effects */
+select:hover,
+select:focus {
+    border-color: #888;
+    outline: none;
+}
+
+/* General text styling */
+.selected-location {
+    font-size: 18px;
+    font-weight: normal;
+    color: black;
+}
+
