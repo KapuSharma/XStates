@@ -32,6 +32,7 @@ const CitySelector = () => {
             const res = await fetch(
               `https://crio-location-selector.onrender.com/country=${selectedCountry}/states`
             );
+            const data = await res.json();
             console.log(data);
             setStates(data) // Store the full data for reset 
           } catch (error) {
@@ -47,6 +48,7 @@ const CitySelector = () => {
             const res = await fetch(
               ` https://crio-location-selector.onrender.com/country=${selectedCountry}/state=${selectedState}/cities`
             );
+            const data = await res.json();
             console.log(data);
             setCities(data) // Store the full data for reset 
           } catch (error) {
